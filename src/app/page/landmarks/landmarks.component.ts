@@ -15,6 +15,8 @@ export class LandmarksComponent {
   landmark : any
   countrySet = new Set<string>();
   countries : any;
+  landmarkByCountry = new Array<any>();
+  country = '';
  constructor(){
   // console.log(jsonData)
   this.landmark = this.landmarks[0];
@@ -23,6 +25,14 @@ export class LandmarksComponent {
   });
   this.countries = Array.from(this.countrySet);
   console.log(this.countries);
+}
+searchByCountry(){
+  this.landmarkByCountry = new Array<any>();
+  this.landmarks.forEach(element => {
+    if(element.country == this.country){
+      this.landmarkByCountry.push(element);
+    }
+  })
 }
 Search(id : any){
    for(let index = 0; index < this.landmarks.length; index++){

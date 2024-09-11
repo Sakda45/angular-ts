@@ -25,6 +25,14 @@
     ค้นหา
     </button> 
 </div>
+
+<mat-label style="margin-left: 100px;">เลือกประเทศ</mat-label>
+<select name="country" style="margin-left: 10px; height: 30px;"
+        [(mgModel)] = "country" (ngModelChange) = "searchByCountry()">
+    <option selected>{{this.countries[0]}}</option>
+    <option>{{this.countries[1]}}</option>
+    <option>{{this.countries[2]}}</option>
+    </select>
 <div
     style="
         display: flex;
